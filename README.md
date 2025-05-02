@@ -19,7 +19,8 @@ A minimal, zero-configuration starter template for building **vanilla JavaScript
 - 📄 HTML template processing  
 - 🎨 CSS bundling & extraction  
 - 🔒 Asset minification & cache-busting  
-
+- 🧪 Jest testing support
+- 📦 ES6+ module support via Babel
 ---
 
 ## 📁 Repository Structure
@@ -89,13 +90,14 @@ npm run build
 | `webpack.dev.js`   | development  | `devtool: 'inline-source-map'`, `webpack-dev-server`, HMR          |
 | `webpack.prod.js`  | production   | CSS extraction, JS/CSS minification, content hashing, tree shaking |
 
-
 ## 📦 NPM Scripts
 
 | Script | Command         | Description                             |
 |--------|-----------------|-----------------------------------------|
-| start  | `npm run start`  | Run dev server with live reload & HMR   |
-| build  | `npm run build`  | Create optimized production build in `dist/` |
+| test   | `npm test`      | Run Jest tests once                     |
+| watch  | `npm run watch` | Run Jest tests in watch mode            |
+| start  | `npm run start` | Run dev server with live reload & HMR   |
+| build  | `npm run build` | Create optimized production build in `dist/` |
 
 ---
 
@@ -105,6 +107,8 @@ npm run build
 - `webpack`
 - `webpack-cli`
 - `webpack-dev-server`
+- `@babel/core` & `@babel/preset-env` - For ES6+ module support
+- `jest` & `babel-jest` - For testing support
 
 ### HTML
 - `html-webpack-plugin`
@@ -120,6 +124,29 @@ npm run build
 
 > See `package.json` for exact versions.
 
+## 📦 Testing & Development Setup
+
+### Jest Testing
+This template includes Jest testing support. To run tests:
+
+```bash
+# Run all tests once
+npm test
+
+# Run tests in watch mode
+npm run watch
+```
+
+### ES6+ Module Support
+The template uses Babel to transpile ES6+ modules. Your JavaScript files can use modern JavaScript features including:
+
+- ES6 modules (`import`/`export`)
+- Arrow functions
+- Template literals
+- Destructuring
+- Classes
+- Async/await
+
 ---
 
 ## 🤝 Contributing
@@ -127,7 +154,8 @@ npm run build
 1. **Fork** this repository
 2. **Create** your feature branch
    ```bash
-   git checkout -b feature/your-feature
+git checkout -b feature/your-feature
+```
    ```
 3. **Commit** your changes
    ```bash
